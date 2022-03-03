@@ -1,0 +1,135 @@
+/* Couleur */
+header {
+    color: white;
+    text-align: center; 
+    margin: auto; 
+}
+h3 {
+    color: rgba(29, 93, 231, 0.76);
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px;
+    padding-top: 20px;
+    text-transform: capitalize;
+}
+    
+h3::before {
+    content:"<" ;
+}
+h3::after {
+    content: ">";
+}
+
+/* Titre  */
+h1{
+    padding: 0.5em;
+    color: rgba(29, 93, 231, 0.76);
+    display: inline;
+    
+}
+h2{
+    margin: 10px;
+    padding: 0.3em;
+    color: rgba(29, 93, 231, 0.76);
+    font-size: 26px;
+    
+}
+
+
+h2, h3 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive, sans-serif;
+}
+
+div {
+    max-width: 1500px;
+    margin: auto;
+    display: inline-block;
+}
+
+.entete {
+    background-color: black;
+    padding-top: 40px;
+    display: block;
+    
+}
+
+.corp {
+    display: block;
+    margin: auto;
+    background-color: white;   
+    max-width: 1500px;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: gray;
+    display: block;
+    text-align: center;
+    overflow: scroll;
+}
+
+nav {
+    text-align: center;
+    display: block;    
+    background-color: white;
+    padding: 1em;
+    margin-top: 1.5em;
+    border: 2px solid gray;    
+    box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
+    font-weight: bold;
+}
+
+a{
+    padding: 1em;
+    margin-top: 1.5em;
+    text-decoration: none;
+    color: rgb(38, 38, 233);    
+    text-shadow: 1em;
+}
+
+nav a:hover {
+    background-color: black ;
+    box-shadow: 3px 3px 3px 3px;  
+    margin: 5px;
+}
+
+/* images */
+header img {
+    justify-content: center;
+    margin: 1em;
+    width: 40em;
+}
+
+img {
+    margin: 1.5em;
+    width: 30em;
+    }
+
+.projet {
+    display: block; 
+}
+
+/* bas de page */
+.contact {
+    text-align: center;
+    border: 2px solid gray;    
+    box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
+    max-width: 1500px;
+    }
+
+footer {
+    text-align: center;
+    color: white;
+    max-width: 1500px;
+    padding-top: 10px;
+}
+
+.contact a {
+    padding: 0px;
+}
+* {
+    box-sizing: border-box;
+}
+
+
