@@ -1,12 +1,28 @@
 /* Couleur */
+
+font-family: 'Goldman', cursive;
+font-family: 'Passion One', cursive;
+
 header {
     color: white;
     text-align: center; 
     margin: auto; 
 }
+
+.entete {
+    background-image: url(../Pictures/—Pngtree—digital\ global\ connection\ network\ technology_1181223.jpg);
+    max-width: 110em;
+    height: 40em;
+    padding-top: 40px;
+    display: block;
+}
+
+
+
 h3 {
     color: rgba(29, 93, 231, 0.76);
-    font-family: 'Open Sans', sans-serif;
+    
+    font-family: 'Press Start 2P', cursive, sans-serif;
     margin: 10px;
     padding-top: 20px;
     text-transform: capitalize;
@@ -24,40 +40,35 @@ h1{
     padding: 0.5em;
     color: rgba(29, 93, 231, 0.76);
     display: inline;
-    
+    max-width: 110em;
+    font-family: 'Goldman', cursive;
+    text-shadow: 1px 1px 2px rgb(38, 38, 233);
 }
+
 h2{
     margin: 10px;
     padding: 0.3em;
     color: rgba(29, 93, 231, 0.76);
-    font-size: 26px;
-    
+    font-size: 46px;
+    font-family: 'Goldman', cursive;
+    font-weight: bold;
+    max-width: 110em;
+    text-shadow: 1px 1px 2px rgb(38, 38, 233);
 }
 
 
-h2, h3 {
+h3 {
     text-align: center;
     font-family: 'Press Start 2P', cursive, sans-serif;
 }
 
-div {
-    max-width: 1500px;
-    margin: auto;
-    display: inline-block;
-}
 
-.entete {
-    background-color: black;
-    padding-top: 40px;
-    display: block;
-    
-}
 
 .corp {
     display: block;
     margin: auto;
     background-color: white;   
-    max-width: 1500px;
+    max-width: 110em;
 }
 
 
@@ -67,6 +78,8 @@ body{
     display: block;
     text-align: center;
     overflow: scroll;
+    max-width: 110em;
+    font-size: 16px;
 }
 
 nav {
@@ -74,10 +87,11 @@ nav {
     display: block;    
     background-color: white;
     padding: 1em;
-    margin-top: 1.5em;
+    margin-top: 26.2em;
     border: 2px solid gray;    
     box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
     font-weight: bold;
+    max-width: 110em;
 }
 
 a{
@@ -95,19 +109,26 @@ nav a:hover {
 }
 
 /* images */
-header img {
-    justify-content: center;
-    margin: 1em;
-    width: 40em;
-}
 
 img {
-    margin: 1.5em;
     width: 30em;
+    display: block;
+    flex-wrap: wrap;
     }
 
 .projet {
     display: block; 
+    
+}
+.projets__img_AI {
+    width: 21.6em;
+    margin: 20px auto;
+    
+}
+
+.projets__img_languages {
+    width: 20.5em;
+    margin: 20px auto;
 }
 
 /* bas de page */
@@ -115,7 +136,8 @@ img {
     text-align: center;
     border: 2px solid gray;    
     box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
-    max-width: 1500px;
+    
+    max-width: 110em;
     }
 
 footer {
@@ -123,11 +145,13 @@ footer {
     color: white;
     max-width: 1500px;
     padding-top: 10px;
+    max-width: 110em;
 }
 
 .contact a {
     padding: 0px;
 }
+
 * {
     box-sizing: border-box;
 }
