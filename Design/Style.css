@@ -20,7 +20,7 @@ header {
 
 
 h3 {
-    color: rgba(29, 93, 231, 0.76);
+    color: rgb(0, 247, 255);
     
     font-family: 'Press Start 2P', cursive, sans-serif;
     margin: 10px;
@@ -42,18 +42,18 @@ h1{
     display: inline;
     max-width: 110em;
     font-family: 'Goldman', cursive;
-    text-shadow: 1px 1px 2px rgb(38, 38, 233);
+    text-shadow: rgb(0, 247, 255) 1px 0 10px;
 }
 
 h2{
     margin: 10px;
     padding: 0.3em;
     color: rgba(29, 93, 231, 0.76);
-    font-size: 46px;
+    font-size: 56px;
     font-family: 'Goldman', cursive;
     font-weight: bold;
     max-width: 110em;
-    text-shadow: 1px 1px 2px rgb(38, 38, 233);
+    text-shadow: rgb(0, 247, 255) 1px 0 10px;
 }
 
 
@@ -67,7 +67,7 @@ h3 {
 .corp {
     display: block;
     margin: auto;
-    background-color: white;   
+    background-color: rgba(0, 31, 51);   
     max-width: 110em;
 }
 
@@ -80,32 +80,40 @@ body{
     overflow: scroll;
     max-width: 110em;
     font-size: 16px;
+    color: white;
 }
 
 nav {
     text-align: center;
-    display: block;    
-    background-color: white;
-    padding: 1em;
-    margin-top: 26.2em;
-    border: 2px solid gray;    
-    box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
+    display: block; 
+    /* flex-wrap: wrap;    */
+    margin-top: 20em;
+    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
     font-weight: bold;
+    font-size: 20px;
     max-width: 110em;
+    padding: 0.5em;
+    
 }
 
 a{
-    padding: 1em;
-    margin-top: 1.5em;
+    padding: 0.5em;
     text-decoration: none;
-    color: rgb(38, 38, 233);    
-    text-shadow: 1em;
+    color: rgb(0, 247, 255);    
+    text-shadow: 1em ; 
+    position: sticky;   
+    margin-bottom: 1em;
+    margin-left: 1em;
+    /* display: block; */
+}
+
+.nav_contact {
+   margin-right: 1em;
 }
 
 nav a:hover {
-    background-color: black ;
-    box-shadow: 3px 3px 3px 3px;  
-    margin: 5px;
+    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+    
 }
 
 /* images */
@@ -135,7 +143,7 @@ img {
 .contact {
     text-align: center;
     border: 2px solid gray;    
-    box-shadow: 3px 3px 3px 3px rgb(38, 38, 233);
+    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
     
     max-width: 110em;
     }
