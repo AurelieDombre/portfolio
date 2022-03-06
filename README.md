@@ -1,4 +1,5 @@
-#Présentation :
+###Présentation :
+
 Dans un premier temps je tiens à raconter mon histoire (version courte) :
 J'ai commencé par un autre métier : Assistante de gestion/direction. Métier que j'ai exercé pendant un peu plus de 8 ans. 
 En 2020, j'ai eu un déclic qui m'a fait réaliser que je tournais en rond dans ma vie professionnelle. 
