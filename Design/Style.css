@@ -116,6 +116,14 @@ nav a:hover {
     
 }
 
+.projets__img_AI:hover {
+    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+}
+
+.projets__img_languages:hover {
+    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+}
+
 /* images */
 
 img {
@@ -144,7 +152,6 @@ img {
     text-align: center;
     border: 2px solid gray;    
     box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
-    
     max-width: 110em;
     }
 
