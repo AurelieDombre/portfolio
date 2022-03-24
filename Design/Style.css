@@ -132,8 +132,10 @@ img {
     flex-wrap: wrap;
     }
 
-.projet {
+.projets {
     display: block; 
+    width: 100%;
+    height: 100%;
     
 }
 .projets__img_AI {
@@ -146,6 +148,42 @@ img {
     width: 20.5em;
     margin: 20px auto;
 }
+
+
+/* Slide */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slide{
+
+    height: 70vh;
+    position: relative;
+    
+}
+
+.slide img{
+    object-fit: cover;
+    height: 80%;
+    width: 50%;
+    position: absolute;
+    position: calc(70%/2);
+    margin-left: 25%;
+}
+
+.precedent, .suivant{
+    color: black;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+
+}
+
+
+
 
 /* bas de page */
 .contact {
