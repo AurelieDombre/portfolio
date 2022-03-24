@@ -126,7 +126,7 @@ nav a:hover {
 
 /* images */
 
-img {
+.slide__conteneur--img img {
     width: 30em;
     display: block;
     flex-wrap: wrap;
@@ -152,12 +152,8 @@ img {
 
 /* Slide */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+/* 
 .slide{
 
     height: 70vh;
@@ -170,19 +166,36 @@ img {
     height: 80%;
     width: 50%;
     position: absolute;
-    position: calc(70%/2);
-    margin-left: 25%;
+    opacity: 0;
+    margin: 2% -23%;
+    transition: opacity .3s;
 }
+
+.slide img .active{
+    opacity:1;
+}
+
+
 
 .precedent, .suivant{
-    color: black;
-    font-size: 3rem;
-    position: absolute;
+    color: white;
+    font-size: 5rem;
+    position: relative;
+    z-index: 3;
     top: 50%;
-
+   
+    background-color: aqua;
+    display: inline-block;
 }
 
-
+.precedent{
+    left: 23rem;
+    z-index: 3;
+}
+.suivant{
+    right: 23rem;
+    z-index: 3;
+} */
 
 
 /* bas de page */
