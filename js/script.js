@@ -1,75 +1,110 @@
 
-// Appeler la classe des images
 
+const slider = {
 
-let img_slider = document.querySelector(".slide__image");
-console.log(img_slider);
+    currentImg: 0 ,
+    imgList: [],
 
-// Quelle image afficher en premier = 0 car index 0
-let etape = 0;
+    init: function () {
+        // on load les images
+        slider.loadImages();
 
-// nombre d'image = nbr d'image qu'il y a dans le tableau
+        // recuperer la liste des images pour la stocker en propriété du module
+        slider.imgList = document.querySelectorAll(".slider__img");
 
-let nbr_img = img_slider.length;
+        // on place des ecouteurs d'evenement sur les bouton precedant / suivant
+        const arrowBtnList = document.querySelectorAll(".slider__btn");
 
-// Appel de classe pour le bouton précédent et suivant
-let precedent = document.querySelector(".precedent");
+        // ecouteur sur le bouton précédant
+        arrowBtnList[0].addEventListener("click", slider.handlePreviousClick);
 
-let suivant = document.querySelector(".suivant")
+        // ecouteur sur le bouton suivant
+        arrowBtnList[1].addEventListener("click", slider.handleNextClick);
+    },
 
+    handlePreviousClick: function () {
+        console.log("Click sur Previous, l'image courante est la numéro " + slider.currentImg);
+        // on declare une variable qui va stoquer le numéro de la slide à afficher
+        let previousImgNumber;
 
-// Fonction pour enlevé la classe active qui permettra de faire le slide = la clase active va passer d'une image à l'autre et afficher l'image sur laquelle la classe est placée.
-function enleverActiveImages() {
+        // si on est à zéro
+        if (slider.currentImg === 0) {
+            // alors on ne veux pas aller à zéro moins un ...
+            // on va aller au bout du tableau
+            previousImgNumber = slider.imgList.length - 1;
+        }
+        //  si on est pas à zéro
+        else {
+            // on veut aller à l'image courante -1
+            previousImgNumber = slider.currentImg - 1;
+        }
 
-    for (let index= 0; index < nbr_img; index++){
+        //  On peut faire une condition ternaire qui raccourci le code
+        // tuto qui explique les ternaires : https://www.devenir-webmaster.com/V2/TUTO/CHAPITRE/JAVASCRIPT/13-ternaire/
+        // previousImgNumber = slider.currentImg === 0 ? slider.imgList.length - 1 : slider.currentImg - 1;
 
-        img_slider[index].classList.remove("active");
+        console.log("Et on veut aller sur la numéro " + previousImgNumber);
 
-    }
+        // on appelle goToSlide avec le numéro de la slide précédante en param
+        slider.goToSlide(previousImgNumber);
+    },
+    handleNextClick: function () {
+        console.log("click sur next");
+        // on veut aller à l'image courante +1
 
-}
-// Ajout d'un écouteur
-suivant.addEventListener('click', handleSlideRigth);
+        // on ecrit une ternaire pour affecter nextImgNumber à 0 si on est sur la dernière et à la courante + 1 sinon
+        nextImgNumber = slider.currentImg === slider.imgList.length - 1 ? 0 : slider.currentImg + 1;
 
-// fonction de l'éxécusion de l'écouteur
+        // on appelle goToSlide avec le numéro de la slide suivante en param
+        slider.goToSlide(nextImgNumber);
+    },
+    goToSlide: function (nextImgNumber) {
+        // et va chercher la slide dont le numéro est passé en paramètre et lui ajoute la classe courante
 
-function handleSlideRigth(event){
-    etape++;
+        // on va chercher la slide courrante
+        const currentImg = slider.imgList[slider.currentImg];
 
-    // si etape est inférieur ou égale au nombre d'image (arrivé à la fin du tableau d'image) alors allez à l'index 0.
-    if(etape >= nbr_img){
-        etape = 0;
-    }
-    enleverActiveImages();
-    img_slider[etape].classList.add("active");
-}
+        // on lui enleve la class courrante
+        currentImg.classList.remove("slider__img--current");
 
-precedent.addEventListener('click', handleSlideLeft);
+        // on recupère l'image dont le numéro "nextImgNumber" est passé en param
+        // on a la liste des images, on prend donc l'image numéro "nextImgNumber" dans la liste
+        const nextImg = slider.imgList[nextImgNumber];
 
-function handleSlideLeft(event){
-    etape--;
+        // on lui ajoute la classe courante
+        nextImg.classList.add("slider__img--current");
 
-    // si etape est inférieur à 0 alors allez à l'index "fin du slider".
-    if(etape < 0){
-        etape = 0;
-    }
-    enleverActiveImages();
-    img_slider[etape].classList.add("active");
-}
+        // on met à jour la propriété qui stocke l'image courante
+        // maintenant la nouvelle image courante est celle dont le num est passé en paramètre
+        slider.currentImg = nextImgNumber;
+    },
+    loadImages: function () {
+        // fonction qui va inserer dans le DOM des images pour le slider
+        const sliderImages = ["matrix.jpg", "code.jpg"];
 
+        // 1 - selectionner l'element slider qui sera le parent dans lequel on va inserer les images
+        const sliderElmt = document.querySelector(".slider");
 
-// Rendre auto les slides, toutes les 3secondes elles changes
+        // 2 - BOUCLE : pour chaque element du tableau  :
+        for (const image of sliderImages) {
+            // creer un element img : createElement
+            let imgElmt = document.createElement("img");
 
-setInterval(function(){
-    etape++;
+            // lui ajouter une class : classList / className
+            imgElmt.classList.add("slider__img");
 
-    if(etape >= nbr_img){
-        etape = 0;
-    }
-    enleverActiveImages();
-    img_slider[etape].classList.add("active");
-}, 3000)
+            // lui ajouter une url d'image src : .src
+            imgElmt.src = "../portfolio/Pictures/" + image;
 
+            // ajouter l'element image dans le parent slider : appendChild ou prepend
+            sliderElmt.prepend(imgElmt);
+        }
 
+        // on va aller chercher la premiere image avec querySelector
+        // on lui ajoute la classe current
+        const firstImage = document.querySelector(".slider__img");
+        firstImage.classList.add("slider__img--current");
+    },
+};
 
-
+document.addEventListener("DOMContentLoaded", slider.init());
