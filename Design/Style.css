@@ -1,8 +1,11 @@
 /* Couleur */
 html{
     --text-font-family: 'Goldman', cursive;
-    
-    --title-font-family: 'Passion One', cursive;  
+    --title-font-family: 'Passion One', cursive; 
+    --title-color : rgb(0, 247, 255);
+    --color-hover :rgb(0, 247, 255);
+    --texte-color :  rgba(29, 93, 231, 0.76);
+    --bg-color : rgba(0, 31, 51); 
 }
 
 
@@ -23,8 +26,7 @@ header {
 
 
 h3 {
-    color: rgb(0, 247, 255);
-    
+    color: var(--title-color);
     font-family: 'Press Start 2P', cursive, sans-serif;
     margin: 10px;
     padding-top: 20px;
@@ -41,22 +43,23 @@ h3::after {
 /* Titre  */
 h1{
     padding: 0.5em;
-    color: rgba(29, 93, 231, 0.76);
+    color: var(--texte-color );
     display: inline;
     max-width: 110em;
     font-family: 'Goldman', cursive;
-    text-shadow: rgb(0, 247, 255) 1px 0 10px;
+    
+    text-shadow: var(--title-color) 1px 0 10px;
 }
 
 h2{
     margin: 10px;
     padding: 0.3em;
-    color: rgba(29, 93, 231, 0.76);
+    color: var(--texte-color );
     font-size: 56px;
     font-family: 'Goldman', cursive;
     font-weight: bold;
     max-width: 110em;
-    text-shadow: rgb(0, 247, 255) 1px 0 10px;
+    text-shadow: var(--color-hover) 1px 0 10px;
 }
 
 
@@ -70,7 +73,7 @@ h3 {
 .corp {
     display: block;
     margin: auto;
-    background-color: rgba(0, 31, 51);   
+    background-color: var(--bg-color);   
     max-width: 110em;
 }
 
@@ -91,7 +94,7 @@ nav {
     display: block; 
     /* flex-wrap: wrap;    */
     margin-top: 20em;
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
+    box-shadow: 3px 3px 3px 3px var(--color-hover);
     font-weight: bold;
     font-size: 20px;
     max-width: 110em;
@@ -102,7 +105,7 @@ nav {
 a{
     padding: 0.5em;
     text-decoration: none;
-    color: rgb(0, 247, 255);    
+    color: var(--title-color);    
     text-shadow: 1em ; 
     position: sticky;   
     margin-bottom: 1em;
@@ -115,16 +118,16 @@ a{
 }
 
 nav a:hover {
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+    box-shadow: 3px 3px 3px 3px var(--color-hover);  
     
 }
 
 .projets__img_AI:hover {
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+    box-shadow: 3px 3px 3px 3px var(--color-hover);  
 }
 
 .projets__img_languages:hover {
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+    box-shadow: 3px 3px 3px 3px var(--color-hover);  
 }
 
 /* images */
@@ -154,15 +157,19 @@ nav a:hover {
 
 
 /* slider */
-.slider {
+ .slider {
   position: relative;
   height: 40em;
   width: 40em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 29%;
+  margin-left: 33%;
   margin-top: 5%;
+}
+
+.slider a{
+    
 }
 
 .slider__img {
@@ -185,9 +192,9 @@ nav a:hover {
   position: relative;
   z-index: 2;
   font-weight: bold;
-}
+} 
 
-/* bonus slider nav */
+/*  slider nav */
 .slider__nav {
   position: absolute;
   display: flex;
@@ -206,7 +213,7 @@ nav a:hover {
   height: 0.5em;
   border-radius: 50%;
   background-color: white;
-}
+} */
 
 
 .btn {
@@ -214,7 +221,7 @@ nav a:hover {
   }
 
 .btn {
-    background-color: rgb(0, 247, 255);
+    background-color: var(--color-hover);
     border: 0;
     border-radius: 3px;
     color: white;
@@ -231,13 +238,13 @@ nav a:hover {
 .contact {
     text-align: center;
     border: 2px solid gray;    
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
+    box-shadow: 3px 3px 3px 3px var(--color-hover);
     max-width: 110em;
     }
 
 footer {
     text-align: center;
-    color: white;
+    color: var(--texte-color);
     max-width: 1500px;
     padding-top: 10px;
     max-width: 110em;

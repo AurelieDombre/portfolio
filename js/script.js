@@ -85,8 +85,10 @@ const slider = {
         // 1 - selectionner l'element slider qui sera le parent dans lequel on va inserer les images
         const sliderElmt = document.querySelector(".slider");
 
+    
         // 2 - BOUCLE : pour chaque element du tableau  :
         for (const image of sliderImages) {
+           
             // creer un element img : createElement
             let imgElmt = document.createElement("img");
 
