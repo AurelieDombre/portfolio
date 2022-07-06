@@ -1,5 +1,4 @@
-
-	<section class="contact">
+<section class="contact">
 		<h3 id="contact">CONTACT</h3>
 		<p> Pour plus d'information, je suis disponible par e-mail à l'adresse suivante : <a
 				href="mailto:au.dombre@gmail.com">au.dombre@gmail.com </a> <br>
@@ -16,6 +15,14 @@
 <footer>
 	<span>2022 @Aurélie Dombre</span>
 </footer>
+
+
+
+
+
+
+
+
 
 
 </html>
