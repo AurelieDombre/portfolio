@@ -1,4 +1,4 @@
-###Présentation :
+# Présentation :
 
 Dans un premier temps je tiens à raconter mon histoire (version courte) :
 J'ai commencé par un autre métier : Assistante de gestion/direction. Métier que j'ai exercé pendant un peu plus de 8 ans. 
@@ -9,7 +9,7 @@ C'est à ce moment que j'ai décidé de devenir développeuse web.
 
 ## Premier portfolio :
 
-Comme son nom l'indique, il s'agit de mon tout premier projet : un portfolio en  HTML5 / CSS. 
+Comme son nom l'indique, il s'agit de mon tout premier projet : un portfolio en  HTML5 / CSS et PHP. 
 Dans ce dernier vous trouverez mes réalisations.
 
 ## Mon CV :
