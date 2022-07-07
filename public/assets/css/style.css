@@ -157,8 +157,10 @@ nav a:hover {
   margin: 20px auto;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*           /* slider */   
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* slider */
 .slider {
   position: relative;
   height: 32em;
@@ -236,7 +238,24 @@ nav a:hover {
   color: white;
 }
 
-/* bas de page */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*              PROJECTS
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.project_list{
+  width: 100%;
+  height: 90%;
+}
+
+.project_list img{
+  
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*              bas de page
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 .contact {
   text-align: center;
   border: 2px solid gray;    
