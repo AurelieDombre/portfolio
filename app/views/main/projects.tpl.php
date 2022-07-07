@@ -1,14 +1,4 @@
-
-
-<div class="corp">
-    <section class="Bienvenue">
-        <h3>BIENVENUE</h3>
-
-        <p> J'ai le plaisir de vous présenter dans ce portfolio les
-            projets que j'ai menez à bien. </p>
-    </section>
-
-    <section class="projets">
+<section class="projets">
         <h3>PROJETS</h3>
         <div class="slider">
             <!-- <img class="projets__img_AI slide__image slider__img"

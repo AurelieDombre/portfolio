@@ -14,18 +14,18 @@ class ErrorController extends CoreController {
         header("HTTP/1.0 404 Not Found");
 
         // Puis on affiche du code HTML
-        $this->show('404');
+        $this->show('error/404');
     }
 
     /**
-     * Page 404
+     * Page 403
      */
     public function error403() {
-        // On indique au navigateur que la page n'est pas trouvée
+        // On indique au navigateur qu'il n'a pas le droit d'être sur cette page'
         // Ce n'est pas une redirection
         header("HTTP/1.0 403 Forbidden");
 
         // Puis on affiche du code HTML
-        $this->show('403');
+        $this->show('error/403');
     }
 }

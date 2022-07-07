@@ -1,9 +1,4 @@
-<?php
-include "...php";
 
-
-
-?>
 
 
 <main class="main-container_form">

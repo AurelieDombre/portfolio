@@ -11,10 +11,25 @@ class MainController extends CoreController {
      */
     public function home() {
         // If I need data from database (Models)
-        $examples = ExampleModel::findAll();
+        // $examples = ExampleModel::findAll();
 
         // For now, this page only needs the view
         $this->show('main/home');
+        // Instead, if this page needs data, we can put all data
+        // in an array as 2nd argument :
+        // $this->show('main/home', [
+        //     'examples' => $examples
+        // ]);
+    }
+
+    /**
+     * Method for the project on the home page
+     */
+    public function projectList() {
+        // If I need data from database (Models)
+
+        // For now, this page only needs the view
+        $this->show('main/projects');
         // Instead, if this page needs data, we can put all data
         // in an array as 2nd argument :
         // $this->show('main/home', [

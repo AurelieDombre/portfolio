@@ -15,12 +15,9 @@ header {
 
 /* *******************! Contact ********************************* */
 
-.entete_contact{
-    background-image: url(../Pictures/—Pngtree—mobile\ desktop\ computer_328529.jpg);
-    max-width: 110em;
-    height: 40em;
-    padding-top: 40px;
-    display: block;
+.entete--contact{
+    background-image: url(../pictures/mobile_desktop_computer.jpg);
+
 }
 
 

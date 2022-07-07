@@ -9,20 +9,9 @@
 	</div>
 </body>
 
-
-<script src="./js/script.js"></script>
 <!-- Pied de page -->
 <footer>
 	<span>2022 @Aurélie Dombre</span>
 </footer>
-
-
-
-
-
-
-
-
-
 
 </html>

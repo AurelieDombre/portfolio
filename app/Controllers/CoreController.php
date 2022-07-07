@@ -31,8 +31,13 @@ abstract class CoreController {
 
         extract($viewData);
 
-        include(__DIR__.'/../views/layout/header.tpl.php');
-        // TODO check if file exists before inclusion
+        $page = $_GET['_url'];
+        if ($page=='/contact') {
+            include(__DIR__.'/../views/layout/headerContact.tpl.php'); 
+        }else{
+            include(__DIR__.'/../views/layout/header.tpl.php'); 
+        };
+
         include(__DIR__.'/../views/'.$viewName.'.tpl.php');
         include(__DIR__.'/../views/layout/footer.tpl.php');
     }
