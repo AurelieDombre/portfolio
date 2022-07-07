@@ -17,7 +17,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&family=Passion+One:wght@700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="assets/css/style.css">
-	<!-- <link rel="stylesheet" href="assets/css/style-contact.css"> -->
+	
 
 	<script defer src="assets/js/script.js"></script>
 </head>

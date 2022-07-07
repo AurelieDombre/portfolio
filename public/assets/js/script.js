@@ -96,7 +96,7 @@ const slider = {
             imgElmt.classList.add("slider__img");
 
             // lui ajouter une url d'image src : .src
-            imgElmt.src = "../portfolio/Pictures/" + image;
+            imgElmt.src = "assets/pictures/" + image;
 
             // ajouter l'element image dans le parent slider : appendChild ou prepend
             sliderElmt.prepend(imgElmt);

@@ -17,7 +17,10 @@ header {
 
 .entete--contact{
     background-image: url(../pictures/mobile_desktop_computer.jpg);
-
+    max-width: 110em;
+    height: 40em;
+    padding-top: 40px;
+    display: block;
 }
 
 
@@ -81,16 +84,14 @@ body{
 }
 
 nav {
-    text-align: center;
-    display: block; 
-    /* flex-wrap: wrap;    */
-    margin-top: 23.5em;
-    box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
-    background-color: rgba(0, 31, 51);   
-    font-weight: bold;
-    font-size: 20px;
-    max-width: 110em;
-    padding: 0.5em;
+  text-align: center;
+  display: block; 
+  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
+  background-color: rgba(0, 31, 51);   
+  font-weight: bold;
+  font-size: 20px;
+  max-width: 110em;
+  padding: 0.5em;
     
 }
 
@@ -106,7 +107,7 @@ a{
 }
 
 .nav_contact {
-   margin-right: 1em;
+  margin-right: 1em;
 }
 
 nav a:hover {
@@ -119,7 +120,7 @@ nav a:hover {
 .corp {
     display: block;
     margin: auto;
-    background-image: url(../Pictures/business\ technology\ digital\ high-tech\ world.jpg);   
+    background-image: url(../pictures/digital_high-tech_world.jpg);   
     background-repeat: no-repeat;
     background-size: 100% 100%;
     max-width: 110em;
@@ -128,18 +129,19 @@ nav a:hover {
 }
 
   
-  .post {
+.post {
     max-width: 110em;
     padding: 1.5em;
     font-size: 1em;
     display: flex;
- }
+}
   
- form{
+form{
   margin-top: 5%;
-  margin-left: 30%;
- }
-     
+  margin-left: 32%;
+}
+
+
   .form_lastname, 
   .form_firstname, 
   .form_email, 
