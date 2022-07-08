@@ -3,8 +3,13 @@ html{
   --text-font-family: 'Goldman', cursive;
   --main-bg-color : rgba(29, 93, 231, 0.76);
   --texte-title-color :rgb(0, 247, 255);
-  --title-font-family: 'Passion One', cursive;  
+  --title-font-family: 'Passion One', cursive, sans-serif;  
+  --title-color : rgb(0, 247, 255);
+  --color-hover :rgb(0, 247, 255);
+  --texte-color :  rgba(29, 93, 231, 0.76);
+  --bg-color : rgba(0, 31, 51);
 }
+
 
 
 header {
@@ -25,9 +30,8 @@ header {
 
 
 h3 {
-  color: rgb(0, 247, 255);
-    
-  font-family: 'Press Start 2P', cursive, sans-serif;
+  color: var(--title-color);
+  font-family: var(--title-font-family);
   margin: 10px;
   padding-top: 20px;
   text-transform: capitalize;
@@ -43,23 +47,23 @@ h3::after {
 /* Titre  */
 h1{
   padding: 0.5em;
-  color: rgba(29, 93, 231, 0.76);
+  color: var(--texte-color);
   display: inline;
   max-width: 110em;
   font-family: 'Goldman', cursive;
-  text-shadow: rgb(0, 247, 255) 1px 0 10px;
+  text-shadow: var(--color-hover) 1px 0 10px;
   font-size: 70px;
 }
 
 h2{
   margin: 10px;
   padding: 0.3em;
-  color: rgba(29, 93, 231, 0.76);
+  color: var(--texte-color) ;
   font-size: 56px;
   font-family: 'Goldman', cursive;
   font-weight: bold;
   max-width: 110em;
-  text-shadow: rgb(0, 247, 255) 1px 0 3px;
+  text-shadow:  var(--color-hover) 1px 0 3px;
 }
 
 
@@ -71,9 +75,9 @@ h3 {
 
 h4{
   text-align: center;
-  font-family: 'Goldman', cursive;
-  color: rgba(29, 93, 231, 0.76);
-  text-shadow: rgb(0, 247, 255) 1px 0 3px;
+  font-family: var(--text-font-family);
+  color: var(--texte-color) ;
+  text-shadow:   var(--color-hover) 1px 0 3px;
   font-size: 36px;
 }
 
@@ -95,8 +99,8 @@ nav {
   display: block; 
   /* flex-wrap: wrap;    */
   margin-top: -2em;
-  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
-  background-color: rgba(0, 31, 51);
+  box-shadow: 3px 3px 3px 3px var(--color-hover);
+  background-color: var(--bg-color);
   font-weight: bold;
   font-size: 20px;
   max-width: 110em;
@@ -107,7 +111,7 @@ nav {
 a{
   padding: 0.5em;
   text-decoration: none;
-  color: rgb(0, 247, 255);    
+  color: var(--color-hover);    
   text-shadow: 1em ; 
   position: sticky;   
   margin-bottom: 1em;
@@ -120,7 +124,7 @@ a{
 }
 
 nav a:hover {
-  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);  
+  box-shadow: 3px 3px 3px 3px var(--color-hover);  
     
 }
 
@@ -132,7 +136,7 @@ nav a:hover {
 .corp {
   display: block;
   margin: auto;
-  background: rgba(0, 31, 51) url("https://s3.bmp.ovh/imgs/2021/09/3760b5e2cc46f556.png");   
+  background: var(--bg-color ) url("https://s3.bmp.ovh/imgs/2021/09/3760b5e2cc46f556.png");   
   /* background-color: rgba(0, 31, 51);    */
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -141,7 +145,9 @@ nav a:hover {
   text-align: center;
 }
 
-
+.formulaire{
+  margin:auto;
+}
   
 .post {
   max-width: 110em;
@@ -161,8 +167,8 @@ form{
 .form_email, 
 .form_message {
   font-weight: bold;
-  color: rgba(29, 93, 231, 0.76);
-  text-shadow: rgb(0, 247, 255) 1px 0 3px;
+  color: var(--texte-color);
+  text-shadow: var(--color-hover) 1px 0 3px;
   font-size: 2em;
   font-family: 'Goldman', cursive;
   padding: 0.5em;
@@ -172,15 +178,15 @@ form{
 .form__contact{
   display: flex;
   border: none;
-  width: 90%;
   align-items: center;
+  justify-content: space-around;
 
 }
 
 #lastname, #firstname, #email {
   width: 20%;
-  background-color: rgba(0, 31, 51);   
-  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255); 
+  background-color: var(--bg-color);   
+  box-shadow: 3px 3px 3px 3px var(--color-hover); 
   color: white;
 }
 
@@ -188,20 +194,20 @@ form{
 .form__text {
   width: 90%;
   border: none;
-  margin-bottom: 10%;
+  margin: auto;
 }
 
 #message{
   background-color: rgba(0, 31, 51);   
-  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255); 
+  box-shadow: 3px 3px 3px 3px var(--color-hover); 
   color: white;
   width: 50rem;
 }
   
 button {
   padding: 0.5em;
-  background-color: rgb(0, 247, 255);
-  color: rgba(0, 31, 51); 
+  background-color: var(--color-hover);
+  color: var(--bg-color); 
   font-weight: 700;
   border: none;
   border-radius: 5px;
@@ -229,7 +235,7 @@ button {
 .contact {
   text-align: center;
   border: 2px solid gray;    
-  box-shadow: 3px 3px 3px 3px rgb(0, 247, 255);
+  box-shadow: 3px 3px 3px 3px var(--color-hover);
   max-width: 110em;
 }
 
