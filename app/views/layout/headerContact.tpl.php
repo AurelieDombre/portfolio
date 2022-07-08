@@ -19,7 +19,7 @@
     <!--<link rel="stylesheet" href="assets/css/style.css">-->
     <link rel="stylesheet" href="assets/css/style_contact.css">
 
-    <script defer src="assets/js/script.js"></script>
+
 </head>
 
 <body>

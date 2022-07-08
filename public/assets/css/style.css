@@ -75,7 +75,7 @@ h3 {
 .corp {
   display: block;
   margin: auto;
-  background-color: var(--bg-color);   
+  background: var(--bg-color) url("https://s3.bmp.ovh/imgs/2021/09/3760b5e2cc46f556.png");   ;   
   max-width: 110em;
 }
 
@@ -242,13 +242,32 @@ nav a:hover {
 /*              PROJECTS
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.project_list{
+
+.projet_list{
   width: 100%;
-  height: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
 }
 
-.project_list img{
+.projet_list a:hover{
   
+}
+
+.projet_list--title{
+  padding: 2em;
+}
+
+.projet_list--img{
+  padding: 2em;
+  width: 30%;
+  height: 30%;
+  margin: auto 3em 3em 3em;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--color-hover);
+
 }
 
 
