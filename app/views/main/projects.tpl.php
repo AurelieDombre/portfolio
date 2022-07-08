@@ -1,3 +1,14 @@
+<header>
+    
+    <div class="entete--project">
+        <h1> Projets</h1>
+    </div>
+    <!-- Menu -->
+    <?php 
+include __DIR__.'/../partials/nav.tpl.php';
+?>
+</header>
+
 <div class="corp">
     <section class="projets">
 

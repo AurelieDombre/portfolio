@@ -31,12 +31,8 @@ abstract class CoreController {
 
         extract($viewData);
 
-        if (empty($_GET['_url'])=='/contact') {
-            include(__DIR__.'/../views/layout/headerContact.tpl.php'); 
-        }else{
-            include(__DIR__.'/../views/layout/header.tpl.php'); 
-        };
 
+        include(__DIR__.'/../views/layout/header.tpl.php');
         include(__DIR__.'/../views/'.$viewName.'.tpl.php');
         include(__DIR__.'/../views/layout/footer.tpl.php');
     }

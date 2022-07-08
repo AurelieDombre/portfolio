@@ -23,7 +23,17 @@ header {
   display: block;
 }
 
+.entete--project{
+  background-image: url(../pictures/digital_high-tech_world.jpg);
+  max-width: 110em;
+  height: 40em;
+  padding-top: 40px;
+  display: block;
+} 
 
+.entete--project h1{
+  margin-top: 20%;
+}
 
 h3 {
   color: var(--title-color);
