@@ -32,7 +32,7 @@ class ContactController extends CoreController
         // If I need data from database (Models)
 
         // For now, this page only needs the view
-        $this->show('main/contact');
+        $this->show('main/contactForm');
         // Instead, if this page needs data, we can put all data
         // in an array as 2nd argument :
         // $this->show('main/home', [

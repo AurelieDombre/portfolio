@@ -14,7 +14,7 @@ include __DIR__.'/../partials/nav.tpl.php';
 	<section class="formulaire">
 		<div class="posts">
 			<h4>Si vous le souhaitez, vous pouvez me laisser un message :</h4>
-			<form action="valider.php" method="post">
+			<form action="main/validate.tpl.php" method="post">
 
 				<fieldset class="form__contact">
 					<label class="form_lastname" for="lastname"> Nom</label>
@@ -32,6 +32,30 @@ include __DIR__.'/../partials/nav.tpl.php';
 				</fieldset>
 
 			</form>
+
+			<?php
+				if (isset($_POST['message'])) {
+					//MIME (Multipurpose Internet Mail Extensions).
+					$entete  = 'MIME-Version: 1.0' . "\r\n";
+					$entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+					//Fausse adresse pour envoyer le mail via notre serveur, il faut qu'il soit cohérent avec la serveur sur lequel est déployé le site 
+					//(sinon ça part dans les spam)
+					$entete .= 'From: contact@gmail.com' . "\r\n";
+					//Pour pouvoir répondre par mail à l'expéditeur
+					$entete .= 'Reply-to: ' . $_POST['email'];
+
+					$message = '<h1>Message envoyé depuis la page Contact du portfolio</h1>
+					<p><b>Nom : </b>' . $_POST['lastname'] . '<br>
+					<p><b>Prénom : </b>' . $_POST['firstname'] . '<br>
+					<p><b>Email : </b>' . $_POST['email'] . '<br>
+					<b>Message : </b>' . htmlspecialchars($_POST['message']) . '</p>';
+			dd($message);
+					$retour = mail('au.dombre@gmail.com', 'Envoi depuis page Contact', $message,"");
+					if($retour)
+						echo '<p>Votre message a bien été envoyé.</p>';
+				}
+				
+			?>
 		</div>
 	</section>
 
