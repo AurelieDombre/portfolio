@@ -32,3 +32,6 @@ include __DIR__.'/../partials/nav.tpl.php';
             <button class="btn slider__btn" type="button" aria-label="Suivant">&gt;</button>
         </div>
     </section>
+
+    <a class="btn_contact" href="<?= $router->generate('main_contactForm') ?>">  </a>
+    

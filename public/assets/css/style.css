@@ -294,6 +294,10 @@ nav a:hover {
   max-width: 110em;
 }
 
+.btn_contact{
+  width: 5%;
+}
+
 footer {
   text-align: center;
   color: var(--texte-color);

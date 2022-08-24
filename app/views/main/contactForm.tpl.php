@@ -14,7 +14,7 @@ include __DIR__.'/../partials/nav.tpl.php';
 	<section class="formulaire">
 		<div class="posts">
 			<h4>Si vous le souhaitez, vous pouvez me laisser un message :</h4>
-			<form action="main/validate.tpl.php" method="post">
+			<form action="" method="post">
 
 				<fieldset class="form__contact">
 					<label class="form_lastname" for="lastname"> Nom</label>
@@ -49,7 +49,7 @@ include __DIR__.'/../partials/nav.tpl.php';
 					<p><b>Prénom : </b>' . $_POST['firstname'] . '<br>
 					<p><b>Email : </b>' . $_POST['email'] . '<br>
 					<b>Message : </b>' . htmlspecialchars($_POST['message']) . '</p>';
-			dd($message);
+			// dd($message);
 					$retour = mail('au.dombre@gmail.com', 'Envoi depuis page Contact', $message,"");
 					if($retour)
 						echo '<p>Votre message a bien été envoyé.</p>';
