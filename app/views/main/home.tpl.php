@@ -23,12 +23,12 @@ include __DIR__.'/../partials/nav.tpl.php';
     <section class="projets">
         <h3>PROJETS</h3>
         <div class="projets__card">
-            <img class="projets__card--img" src="/assets/pictures/qualiextra.jpg" alt="Image de création WEB" href="#">
+            <img class="projets__card--img" src="assets/pictures/qualiextra.jpg" alt="Image de création WEB" href="#">
             <span> Qualiextra, expériences épicuriennes</span>
         </div>
 
         <div class="projets__card">
-        <img class="projets__card--img" src="/assets/pictures/image_cv.jpg" alt="Image languages Web" href="#"> 
+        <img class="projets__card--img" src="assets/pictures/image_cv.jpg" alt="Image languages Web" href="#"> 
         <span> Mon curriculum vitae </span>    
     </div>    
     </section>
