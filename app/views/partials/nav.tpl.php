@@ -1,4 +1,3 @@
-    <!-- Menu -->
 
     <nav>
         <a href="<?= $router->generate('main_home') ?>" title="Accueil général">
