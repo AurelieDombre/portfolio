@@ -96,21 +96,9 @@ body{
   color: white;
 }
 
-nav {
-  text-align: center;
-  display: block; 
-  /* flex-wrap: wrap;    */
-  margin-top: -2em;
-  box-shadow: 3px 3px 3px 3px var(--color-hover);
-  background-color: var(--bg-color);
-  font-weight: bold;
-  font-size: 20px;
-  max-width: 110em;
-  padding: 0.5em;
-  position:relative; 
-}
 
-a{
+
+/* a{
   padding: 0.5em;
   text-decoration: none;
   color: var(--color-hover);    
@@ -118,17 +106,10 @@ a{
   position: sticky;   
   margin-bottom: 1em;
   margin-left: 1em;
-  /* display: block; */
-}
+  
+} */
 
-.nav_contact {
-  margin-right: 1em;
-}
 
-nav a:hover {
-  box-shadow: 3px 3px 3px 3px var(--color-hover);  
-    
-}
 
 /* ====================================================== */
 /* ======================/* Formulaire ================== */

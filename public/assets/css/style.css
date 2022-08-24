@@ -3,7 +3,7 @@ html{
   --text-font-family: 'Goldman', cursive, sans-serif;
   --title-font-family: 'Passion One', cursive, sans-serif; 
   --title-color : rgb(0, 247, 255);
-  --color-hover :rgb(0, 247, 255);
+  --color-hover :#00f7ff;
   --texte-color :  rgba(29, 93, 231, 0.76);
   --bg-color : rgba(0, 31, 51); 
 }
@@ -101,39 +101,47 @@ body{
   color: white;
 }
 
+
 nav {
-  text-align: center;
-  display: block; 
-  /* flex-wrap: wrap;    */
-  margin-top: -3em;
-  box-shadow: 3px 3px 3px 3px var(--color-hover);
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  transform: translate(-50%,-50%);
+  padding: 1%;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
   font-weight: bold;
   font-size: 20px;
-  max-width: 110em;
-  padding: 0.5em;
-  position: relative;
-    
+  
 }
 
-a{
-  padding: 0.5em;
+ /* Style the links inside the navigation bar */
+nav a{
+  padding: 1em;
+  margin: 1%;
   text-decoration: none;
-  color: var(--title-color);    
-  text-shadow: 1em ; 
-  position: sticky;   
-  margin-bottom: 1em;
-  margin-left: 1em;
-  /* display: block; */
-}
-
-.nav_contact {
-  margin-right: 1em;
+  color: var(--title-color);
+  
 }
 
 nav a:hover {
   box-shadow: 3px 3px 3px 3px var(--color-hover);  
-    
 }
+
+.icon{
+  width: 40px; /* changing the width of the icon */
+	height: 40px; /* changing the height of the icon */
+	text-align: center;
+	overflow: hidden;
+	margin: 0 auto 10px;
+}
+
+.icon img{
+  color: var(--title-color);
+  width: 100%;
+}
+
 
 .projets__img_AI:hover {
   box-shadow: 3px 3px 3px 3px var(--color-hover);  
