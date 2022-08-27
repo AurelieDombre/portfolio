@@ -17,23 +17,9 @@ header {
 
 .entete {
   background-image: url(../pictures/digital_global_connection_network.jpg);
-  max-width: 110em;
   height: 40em;
-  padding-top: 40px;
-  display: block;
 }
 
-.entete--project{
-  background-image: url(../pictures/digital_high-tech_world.jpg);
-  max-width: 110em;
-  height: 40em;
-  padding-top: 40px;
-  display: block;
-} 
-
-.entete--project h1{
-  margin-top: 20%;
-}
 
 h3 {
   color: var(--title-color);
@@ -54,10 +40,8 @@ h3::after {
 h1{
   padding: 0.5em;
   color: var(--texte-color );
-  display: inline;
-  max-width: 110em;
+  font-size: 45px;
   font-family: 'Goldman', cursive;
-    
   text-shadow: var(--title-color) 1px 0 10px;
 }
 
@@ -83,37 +67,27 @@ h3 {
 
 
 .corp {
-  display: block;
-  margin: auto;
   background: var(--bg-color)   ;   
-  max-width: 110em;
 }
 
 
-body{
+body {
   font-family: 'Roboto', sans-serif;
-  background-color: gray;
-  display: block;
+  background-color:rgba(0, 31, 51);
   text-align: center;
-  overflow: scroll;
-  max-width: 110em;
   font-size: 16px;
   color: white;
 }
 
 
 nav {
-  position: absolute;
-  top: 45%;
-  left: 5%;
-  transform: translate(-50%,-50%);
-  padding: 1%;
-  background: var(--bg-color);
-  display: flex;
-  flex-direction: column;
+  position: sticky;
+  top: 0;
+  right: 85%;
+  font-size: 15px;
   font-weight: bold;
-  font-size: 20px;
-  
+  width: 10%;
+  display: inline-flex;
 }
 
  /* Style the links inside the navigation bar */

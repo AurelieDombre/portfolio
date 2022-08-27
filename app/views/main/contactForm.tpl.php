@@ -1,12 +1,8 @@
 <header>
 	<div class="entete--contact">
-		<!-- Menu -->
 		<h1>Contact</h1>
 	</div>
-	<!-- Menu -->
-	<?php 
-include __DIR__.'/../partials/nav.tpl.php';
-?>
+
 </header>
 
 <div class="corp">

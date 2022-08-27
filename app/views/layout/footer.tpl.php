@@ -1,7 +1,8 @@
 
 
 
-	</div>
+		</div>
+
 </body>
 
 <!-- Pied de page -->

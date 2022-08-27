@@ -1,15 +1,13 @@
-
-<header>
-    
-    <div class="entete">
-        <h1> Aurélie Dombre</h1>
-        <h2> Développeuse Web</h2>
-    </div>
 <!-- Menu -->
 <?php 
 include __DIR__.'/../partials/nav.tpl.php';
 ?>
 
+<header>
+    <div class="entete">
+        <h1> Aurélie Dombre</h1>
+        <h2> Développeuse Web</h2>
+    </div>
 </header>
 
 <div class="corp">

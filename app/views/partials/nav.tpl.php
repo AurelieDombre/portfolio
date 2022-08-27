@@ -5,7 +5,7 @@
             <div class="icon">
                 <img src="assets/pictures/home.png" alt="home" >
             </div>
-            <div class="name"><span data-text="Home">Accueil</span></div>
+            <!-- <div class="name"><span data-text="Home">Accueil</span></div>-->
             <!-- we are create first menu item name home -->
         </a>
 
@@ -14,8 +14,7 @@
             <div class="icon">
                 <img src="assets/pictures/mail.png" alt="home" >
             </div>
-            <div class="name"><span data-text="Contact">Contact</span></div>
+            <!--<div class="name"><span data-text="Contact">Contact</span></div>-->
             <!-- we create first menu item name home -->
         </a>
     </nav>
-</html>
