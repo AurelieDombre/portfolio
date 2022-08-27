@@ -125,27 +125,26 @@ nav a:hover {
   display: flex; 
   flex-direction: column;
   background: var(--bg-color);   
-  
+  align-items: center;
 }
 
 
-.projet__card{
-  width: 100%;
-  height: 100%;
+.projets__card{
+  margin: 2% 2% 2% 2%;
+  padding: 1%;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-color);
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #00f7ff;
+  box-shadow: 0 0 20px var(--color-hover);
+
 }
 
 
 .projets__card--img{
   padding: 2em;
-  width: 30%;
-  height: 30%;
-  margin: auto 3em 3em 3em;
-  justify-content: space-between;
   overflow: hidden;
-  box-shadow: 0 0 20px var(--color-hover);
 
 }
 
@@ -167,7 +166,7 @@ nav a:hover {
 
 footer {
   text-align: center;
-  color: var(--texte-color);
+  color: white;
   max-width: 1500px;
   padding-top: 10px;
   max-width: 110em;
