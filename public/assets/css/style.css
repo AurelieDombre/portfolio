@@ -3,8 +3,9 @@ html{
   --text-font-family: 'Goldman', cursive, sans-serif;
   --title-font-family: 'Passion One', cursive, sans-serif; 
   --title-color : rgb(0, 247, 255);
-  --color-hover :#00f7ff;
+  --color-hover :rgb(0, 247, 255);
   --texte-color :  rgba(29, 93, 231, 0.76);
+  --font-color :rgb(195, 233, 233);
   --bg-color : rgba(0, 31, 51); 
 }
 
@@ -17,24 +18,10 @@ header {
 
 .entete {
   background-image: url(../pictures/digital_global_connection_network.jpg);
-  height: 40em;
+  height: 50em;
 }
 
 
-h3 {
-  color: var(--title-color);
-  font-family: 'Press Start 2P', cursive, sans-serif;
-  margin: 10px;
-  padding-top: 20px;
-  text-transform: capitalize;
-}
-    
-h3::before {
-  content:"<" ;
-}
-h3::after {
-  content: ">";
-}
 
 /* Titre  */
 h1{
@@ -60,14 +47,27 @@ h2{
 
 
 h3 {
+  color: var(--title-color);
+  font-family: 'Passion One', cursive, sans-serif;
+  font-size: 35px;
+  margin: 10px;
+  padding-top: 20px;
+  text-transform: capitalize;
   text-align: center;
-  font-family: 'Press Start 2P', cursive, sans-serif;
 }
-
+    
+h3::before {
+  content:"<" ;
+}
+h3::after {
+  content: ">";
+}
 
 
 .corp {
   background: var(--bg-color)   ;   
+  color: var(--font-color);
+  font-size: 25px;
 }
 
 
@@ -190,12 +190,12 @@ nav a:hover {
   position: relative;
   font-size: 17px;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 247, 255, 0.616);
   -webkit-transform: translateY(45px);
   -ms-transform: translateY(45px);
   transform: translateY(45px);
-  -webkit-transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
-  transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
+  /* -webkit-transition: all 0.4s  cubic-bezier(0.88,-0.99, 0, 1.81);
+  transition: all 0.6s  cubic-bezier(0.88,-0.99, 0, 1.81); */
 }
 
 .hovereffect:hover h5 {

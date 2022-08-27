@@ -18,7 +18,7 @@
 	
 	<link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <link rel="stylesheet" href="assets/css/style_contact.css">-->
+    <link rel="stylesheet" href="assets/css/style_contact.css">
 	
 
 	<!-- <script defer src="assets/js/script.js"></script> -->

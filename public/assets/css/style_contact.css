@@ -12,137 +12,42 @@ html{
 
 
 
-header {
-  color: white;
-  text-align: center; 
-  margin: auto; 
-}
-
-/* *******************! Contact ********************************* */
-
-
-
-.entete--contact{
-  background-image: url(../pictures/mobile_desktop_computer.jpg);
-  max-width: 110em;
-  height: 40em;
-  padding-top: 40px;
-  display: block;
-}
-
-
-h3 {
-  color: var(--title-color);
-  font-family: var(--title-font-family);
-  margin: 10px;
-  padding-top: 20px;
-  text-transform: capitalize;
-}
-    
-h3::before {
-  content:"<" ;
-}
-h3::after {
-  content: ">";
-}
-
-/* Titre  */
-h1{
-  padding: 0.5em;
-  color: var(--texte-color);
-  display: inline;
-  max-width: 110em;
-  font-family: 'Goldman', cursive;
-  text-shadow: var(--color-hover) 1px 0 10px;
-  font-size: 70px;
-}
-
-h2{
-  margin: 10px;
-  padding: 0.3em;
-  color: var(--texte-color) ;
-  font-size: 56px;
-  font-family: 'Goldman', cursive;
-  font-weight: bold;
-  max-width: 110em;
-  text-shadow:  var(--color-hover) 1px 0 3px;
-}
-
-
-h3 {
-  text-align: center;
-  font-family: 'Press Start 2P', cursive, sans-serif;
-}
-
-
-h4{
-  text-align: center;
-  font-family: var(--text-font-family);
-  color: var(--texte-color) ;
-  text-shadow:   var(--color-hover) 1px 0 3px;
-  font-size: 36px;
-}
-
-
-
-body{
-  font-family: 'Roboto', sans-serif;
-  background-color: gray;
-  display: block;
-  text-align: center;
-  overflow: scroll;
-  max-width: 110em;
-  font-size: 16px;
-  color: white;
-}
-
-
-
-/* a{
-  padding: 0.5em;
-  text-decoration: none;
-  color: var(--color-hover);    
-  text-shadow: 1em ; 
-  position: sticky;   
-  margin-bottom: 1em;
-  margin-left: 1em;
-  
-} */
-
-
-
 /* ====================================================== */
 /* ======================/* Formulaire ================== */
 /* ====================================================== */
 
-
-.corp {
-  display: block;
-  margin: auto;
-  background: var(--bg-color ) url("https://s3.bmp.ovh/imgs/2021/09/3760b5e2cc46f556.png");   
-  /* background-color: rgba(0, 31, 51);    */
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  max-width: 110em;
-  padding: 30px 20px;
+h4{
   text-align: center;
+  font-family: var(--title-font-family);
+  color: var(--title-color);
+  font-size: 40px;
+}
+
+
+.icon--contact{
+	text-align: center;
+	overflow: hidden;
+	margin: 12px auto 12px;
 }
 
 .formulaire{
-  margin:auto;
+  margin: 2% auto;
+  border: 1px var(--color-hover) outset;
+  box-shadow: 0 0 20px var(--color-hover);
+  padding: 1%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
   
-.post {
-  max-width: 110em;
+.posts {
   padding: 1.5em;
   font-size: 1em;
   display: flex;
+  flex-direction: column;
 }
   
-form{
-  width: 90%;
-  margin: auto;
-}
+
 
 
 .form_lastname, 
@@ -162,23 +67,18 @@ form{
   display: flex;
   border: none;
   align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
 
 }
 
 #lastname, #firstname, #email {
-  width: 20%;
+  width: 80%;
   background-color: var(--bg-color);   
   box-shadow: 3px 3px 3px 3px var(--color-hover); 
   color: white;
 }
 
 
-.form__text {
-  width: 90%;
-  border: none;
-  margin: auto;
-}
 
 #message{
   background-color: rgba(0, 31, 51);   
@@ -216,23 +116,19 @@ button {
 
 /* bas de page */
 .contact {
-  text-align: center;
-  border: 2px solid gray;    
-  box-shadow: 3px 3px 3px 3px var(--color-hover);
-  max-width: 110em;
+  text-align: center;  
+  box-shadow: 3px 3px 3px 3px var(--color-hover); 
+  border: 1px var(--color-hover) outset;
+  padding: 1%;
 }
 
 footer {
   text-align: center;
-  color: white;
-  max-width: 1500px;
-  padding-top: 10px;
+  color: var(--texte-title-color);
+  padding: 1%;
   max-width: 110em;
 }
 
-.contact a {
-  padding: 0px;
-}
 
 * {
   box-sizing: border-box;
