@@ -1,112 +1,101 @@
 
 
-const slider = {
-
-    currentImg: 0 ,
-    imgList: [],
-
-    init: function () {
-        // on load les images
-        slider.loadImages();
-
-        // recuperer la liste des images pour la stocker en propriété du module
-        slider.imgList = document.querySelectorAll(".slider__img");
-
-        // on place des ecouteurs d'evenement sur les bouton precedant / suivant
-        const arrowBtnList = document.querySelectorAll(".slider__btn");
-
-        // ecouteur sur le bouton précédant
-        arrowBtnList[0].addEventListener("click", slider.handlePreviousClick);
-
-        // ecouteur sur le bouton suivant
-        arrowBtnList[1].addEventListener("click", slider.handleNextClick);
-    },
-
-    handlePreviousClick: function () {
-        console.log("Click sur Previous, l'image courante est la numéro " + slider.currentImg);
-        // on declare une variable qui va stoquer le numéro de la slide à afficher
-        let previousImgNumber;
-
-        // si on est à zéro
-        if (slider.currentImg === 0) {
-            // alors on ne veux pas aller à zéro moins un ...
-            // on va aller au bout du tableau
-            previousImgNumber = slider.imgList.length - 1;
-        }
-        //  si on est pas à zéro
-        else {
-            // on veut aller à l'image courante -1
-            previousImgNumber = slider.currentImg - 1;
-        }
-
-        //  On peut faire une condition ternaire qui raccourci le code
-        // tuto qui explique les ternaires : https://www.devenir-webmaster.com/V2/TUTO/CHAPITRE/JAVASCRIPT/13-ternaire/
-        // previousImgNumber = slider.currentImg === 0 ? slider.imgList.length - 1 : slider.currentImg - 1;
-
-        console.log("Et on veut aller sur la numéro " + previousImgNumber);
-
-        // on appelle goToSlide avec le numéro de la slide précédante en param
-        slider.goToSlide(previousImgNumber);
-    },
-    handleNextClick: function () {
-        console.log("click sur next");
-        // on veut aller à l'image courante +1
-
-        // on ecrit une ternaire pour affecter nextImgNumber à 0 si on est sur la dernière et à la courante + 1 sinon
-        nextImgNumber = slider.currentImg === slider.imgList.length - 1 ? 0 : slider.currentImg + 1;
-
-        // on appelle goToSlide avec le numéro de la slide suivante en param
-        slider.goToSlide(nextImgNumber);
-    },
-    goToSlide: function (nextImgNumber) {
-        // et va chercher la slide dont le numéro est passé en paramètre et lui ajoute la classe courante
-
-        // on va chercher la slide courrante
-        const currentImg = slider.imgList[slider.currentImg];
-
-        // on lui enleve la class courrante
-        currentImg.classList.remove("slider__img--current");
-
-        // on recupère l'image dont le numéro "nextImgNumber" est passé en param
-        // on a la liste des images, on prend donc l'image numéro "nextImgNumber" dans la liste
-        const nextImg = slider.imgList[nextImgNumber];
-
-        // on lui ajoute la classe courante
-        nextImg.classList.add("slider__img--current");
-
-        // on met à jour la propriété qui stocke l'image courante
-        // maintenant la nouvelle image courante est celle dont le num est passé en paramètre
-        slider.currentImg = nextImgNumber;
-    },
-    loadImages: function () {
-        // fonction qui va inserer dans le DOM des images pour le slider
-        const sliderImages = ["matrix.jpg", "code.jpg", "monitorx3.jpg"];
-
-        // 1 - selectionner l'element slider qui sera le parent dans lequel on va inserer les images
-        const sliderElmt = document.querySelector(".slider");
-
+const formDisplay = {
     
-        // 2 - BOUCLE : pour chaque element du tableau  :
-        for (const image of sliderImages) {
-           
-            // creer un element img : createElement
-            let imgElmt = document.createElement("img");
+    //  on déclare une propriété (une variable dans un module) pour qu'elle soit accessible depuis toutes les méthodes du module
+    formElmt: document.querySelector(".formulaire"),
+    
+    init: function () {
+        // la méthode init permet de poser tous les espion: l'initialisation du module
 
-            // lui ajouter une class : classList / className
-            imgElmt.classList.add("slider__img");
+        // Etape 1 on selectionne le lien du contact dans le menu 
+        const menuContactElmt = document.querySelector(".menu--contact");
+        
+        // on pose un ecouteur d'evenement dessus pour espionner le click
+        menuContactElmt.addEventListener("click", formDisplay.handleformDisplayClick);
 
-            // lui ajouter une url d'image src : .src
-            imgElmt.src = "assets/pictures/" + image;
+        // on recupere le bouton close 
+        const closeBtnElmt = document.querySelector(".form__close");
 
-            // ajouter l'element image dans le parent slider : appendChild ou prepend
-            sliderElmt.prepend(imgElmt);
+        // on pose un ecouteur d'evenement dessus pour espionner le click
+        closeBtnElmt.addEventListener("click", formDisplay.handleformDisplayClick);
+
+        // Intercepter l'envoi du formulaire
+        // recuperer l'element formulaire sur la page avec sa classe
+        const allFormElmt = document.querySelector(".all__form__contact");
+
+        // on place un espion sur l'evenement 'submit' du formulaire
+        allFormElmt.addEventListener("submit", formDisplay.handleFormSubmit);
+
+        // on place un ecouteur sur l'event 'scroll' de la fenetre 'window'
+        //  event scroll : https://developer.mozilla.org/fr/docs/Web/API/Document/scroll_event
+        window.addEventListener("scroll", formDisplay.handleScroll);
+
+        // on veut lancer un timer au chargment du site pour afficher le formulaire au bout de 5 secondes !
+        // premier argument : le handler
+        // deuxième argument : le nombre de millisecondes à attendre avant d'executer le handler
+        setTimeout(formDisplay.display, 6000);
+    },
+    handleScroll: function () {
+        // si window.scrollY dépasse 1000 on affiche le formulaire
+        if (window.scrollY > 250) {
+            // on affiche le formulaire !!!
+            formDisplay.display();
+
+            // on renvoie l'espion chez lui, on veut supprimer le eventListener !!!!
+            // doc : https://developer.mozilla.org/fr/docs/Web/API/EventTarget/removeEventListener
+            window.removeEventListener("scroll", formDisplay.handleScroll);
         }
+    },
+    handleformDisplayClick: function (event) {
+        // on stoppe le comportement par défaut du lien pour ne pas qu'il y ai de redirection
+        event.preventDefault();
+        console.log('test bouton');
+        // on ajoute la classe form--on sur le aside pour l'afficher !
+        formDisplay.formElmt.classList.toggle("form--on");
+    },
+    handleFormSubmit: function (event) {
+        const forbiddenDomains = [
+            "@yopmail.com",
+            "@yopmail.fr",
+            "@yopmail.net",
+            "@cool.fr.nf",
+            "@jetable.fr.nf",
+            "@courriel.fr.nf",
+            "@moncourrier.fr.nf",
+            "@monemail.fr.nf",
+            "@monmail.fr.nf",
+            "@hide.biz.st",
+            "@mymail.infos.st",
+        ];
 
-        // on va aller chercher la premiere image avec querySelector
-        // on lui ajoute la classe current
-        const firstImage = document.querySelector(".slider__img");
-        firstImage.classList.add("slider__img--current");
+        // on sélectionne le champ dans lequel l'email est inscrit (il possède la classe form_email).
+        const formFieldElmt = document.querySelector(".form_email");
+        const formFieldValue = formFieldElmt.value;
+
+        // verifier si la valeur est incluse dans une des lignes du tableau des emails jetables
+        //  on boucle sur tous les elements du tableau
+        for (let forbiddenDomain of forbiddenDomains) {
+            //  on compare la ligne forbiddenDomain avec la value de l'utilisateur formFieldValue
+            const isForbidden = formFieldValue.includes(forbiddenDomain);
+            // si isForbidden est egal à true : l'email fait parti des jetables donc on a pas besoin de continuer plus loin, on sort de la boucle
+            //  si isForbidden est true l'email fait parti des jetables et on affiche un message d'erreur.
+
+            if (isForbidden) {
+                //  on stoppe le comportement par defaut du submit de form avec preventDefault
+                event.preventDefault();
+                // on veux afficher un message, on va utiliser le module d'affichage des messages
+                // la méthode addMessageToElmt prend en paramètre le node parent et le texte à afficher
+                messages.addMessageToElmt(formDisplay.formElmt, "Merci de ne pas utiliser des adresses e-mails jetables");
+
+                break;
+            }
+        }
+    },
+    display: function () {
+        // on ajoute la classe form--on sur le aside pour l\'afficher !
+        formDisplay.formElmt.classList.add("form--on");
     },
 };
 
-document.addEventListener("DOMContentLoaded", slider.init());
+document.addEventListener("DOMContentLoaded", formDisplay.init());

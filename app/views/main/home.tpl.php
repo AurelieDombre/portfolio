@@ -43,27 +43,30 @@ include __DIR__ . '/../partials/nav.tpl.php';
 
 
     <div class="icon--contact">
-            <a class="icon--contact--btn"><img src="assets/pictures/mail.png" alt="mail">
-            <h4>ME CONTACTEZ</h4>
-            </a> 
-        </div>
+        <img class="icon--contact--btn" src="assets/pictures/mail.png" alt="mail">
+        <button class="menu--contact" type="button" > ME CONTACTEZ</button> 
+            
+    </div>
 
-    <section class="formulaire">
+    <section class="formulaire ">
+    
         <div class="posts">
-            <form action="" method="post">
+            
+            <form action="" method="post" class="all__form__contact">
+            <img class="form__close" src="assets/pictures/close.png" alt="bouton fermé" aria-label="Fermer" type="button">
                 <fieldset class="form__contact">
                     <label class="form_lastname" for="lastname"> Nom</label>
                     <input type="text" name="lastname" id="lastname" placeholder="Prénom" require>
                     <label class="form_firstname" for="firstname">Prénom</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="Prénom" require> <br>
+                    <input type="text" name="firstname" id="firstname" placeholder="Prénom" require> 
                     <label class="form_email" for="email"> E-mail</label>
                     <input type="email" name="email" id="email" placeholder="@ E-mail" require>
                 </fieldset>
 
                 <fieldset class="form__text">
-                    <label class="form_message" for="message">Laissez votre message</label> <br>
-                    <textarea name="message" id="message" placeholder="Votre message" cols="30" rows="10"></textarea>
-                    <br> <button type="submit"> Envoyer</button>
+                    <label class="form_message" for="message">Laissez votre message</label> 
+                    <textarea name="message" id="message" placeholder="Votre message"></textarea>
+                    <button type="submit"> Envoyer</button>
                 </fieldset>
 
             </form>

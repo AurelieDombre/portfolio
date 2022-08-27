@@ -241,31 +241,24 @@ nav a:hover {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .contact {
-  text-align: center;
-  border: 2px solid gray;    
-  box-shadow: 3px 3px 3px 3px var(--color-hover);
-  max-width: 110em;
-}
-
-.btn_contact{
-  width: 5%;
+  text-align: center;  
+  box-shadow: 3px 3px 3px 3px var(--color-hover); 
+  border: 1px var(--color-hover) outset;
+  padding: 1%;
 }
 
 footer {
   text-align: center;
-  color: white;
-  max-width: 1500px;
-  padding-top: 10px;
+  color: var(--texte-title-color);
+  padding: 1%;
   max-width: 110em;
 }
 
-.contact a {
-  padding: 0px;
-}
 
 * {
   box-sizing: border-box;
 }
+
 
 /* ##################################################################### */
 /* ##################### ERRORS #################################### */

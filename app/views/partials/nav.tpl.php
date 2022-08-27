@@ -9,9 +9,9 @@
             <!-- we are create first menu item name home -->
         </a>
 
-        <a href="<?= $router->generate('main_contactForm') ?>">
+        <a class="menu--contact" href="#contact">
             <!-- this anchor text for link your home to another page -->
-            <div class="icon">
+            <div class="icon ">
                 <img src="assets/pictures/mail.png" alt="mail" >
             </div>
             <div class="name"><span data-text="Contact">Contact</span></div>
