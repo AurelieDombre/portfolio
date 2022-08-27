@@ -42,11 +42,12 @@ include __DIR__ . '/../partials/nav.tpl.php';
     </section>
 
 
-    <div class="icon--contact">
+    <!-- A voir si je le mets ou pas
+    <div class="icon--contact menu--contact">
         <img class="icon--contact--btn" src="assets/pictures/mail.png" alt="mail">
         <button class="menu--contact" type="button" > ME CONTACTEZ</button> 
             
-    </div>
+    </div> -->
 
     <section class="formulaire ">
     
