@@ -25,7 +25,7 @@ include __DIR__ . '/../partials/nav.tpl.php';
                 <img class="projets__card--img img-responsive" src="assets/pictures/qualiextra.jpg" alt="Image de création WEB" href="#">
                 <div class="overlay">
                     <h5>Qualiextra, expériences épicuriennes</h5>
-                    <a class="info" href="#"> Voir</a>
+                    <a class="info" target="_blank" href="https://github.com/AurelieDombre/Qualiextra"> Voir</a>
                 </div>
             </div>
         </div>
@@ -35,19 +35,12 @@ include __DIR__ . '/../partials/nav.tpl.php';
                 <img class="projets__card--img img-responsive" src="assets/pictures/cv.jpg" alt="Image languages Web" href="#">
                 <div class="overlay">
                     <h5>Mon curriculum vitae</h5>
-                    <a class="info" href="#"> Voir </a>
+                    <a class="info" target="_blank" href="https://aureliedombre.github.io/cv-developpeuse-web"> Voir </a>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- A voir si je le mets ou pas
-    <div class="icon--contact menu--contact">
-        <img class="icon--contact--btn" src="assets/pictures/mail.png" alt="mail">
-        <button class="menu--contact" type="button" > ME CONTACTEZ</button> 
-            
-    </div> -->
 
     <section class="formulaire ">
     
@@ -57,44 +50,28 @@ include __DIR__ . '/../partials/nav.tpl.php';
             <img class="form__close" src="assets/pictures/close.png" alt="bouton fermé" aria-label="Fermer" type="button">
                 <fieldset class="form__contact">
                     <label class="form_lastname" for="lastname"> Nom</label>
-                    <input type="text" name="lastname" id="lastname" placeholder="Prénom" require>
+                    <input type="text" name="lastname" id="lastname" placeholder="Nom" value="<?= $_POST['lastname'] ?? '' ?>" require>
                     <label class="form_firstname" for="firstname">Prénom</label>
-                    <input type="text" name="firstname" id="firstname" placeholder="Prénom" require> 
+                    <input type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?= $_POST['firstname'] ?? '' ?>" require> 
                     <label class="form_email" for="email"> E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="@ E-mail" require>
+                    <input type="email" name="email" id="email" placeholder="@ E-mail" value="<?= $_POST['email'] ?? '' ?>" require>
                 </fieldset>
 
                 <fieldset class="form__text">
-                    <label class="form_message" for="message">Laissez votre message</label> 
-                    <textarea name="message" id="message" placeholder="Votre message"></textarea>
-                    <button type="submit"> Envoyer</button>
+                    <label class="form_message" for="messageContact">Laissez votre message</label> 
+                    <textarea type="texte" name="messageContact" id="message" placeholder="Votre message" value="<?= $_POST['messageContact'] ?? '' ?>"></textarea>
+                    <button type="submit" name="submit"> Envoyer</button>
                 </fieldset>
-
             </form>
 
-            <?php
-            if (isset($_POST['message'])) {
-                //MIME (Multipurpose Internet Mail Extensions).
-                $entete  = 'MIME-Version: 1.0' . "\r\n";
-                $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-                //Fausse adresse pour envoyer le mail via notre serveur, il faut qu'il soit cohérent avec la serveur sur lequel est déployé le site 
-                //(sinon ça part dans les spam)
-                $entete .= 'From: contact@gmail.com' . "\r\n";
-                //Pour pouvoir répondre par mail à l'expéditeur
-                $entete .= 'Reply-to: ' . $_POST['email'];
+            <?php if (isset($errors_list)): ?>
+                <?php foreach ($errors_list as $error): ?>
+                    <p>
+                        <?= $error ?>
+                    </p>
+                <?php endforeach; ?>
+            <?php endif; ?>
 
-                $message = '<h1>Message envoyé depuis la page Contact du portfolio</h1>
-					<p><b>Nom : </b>' . $_POST['lastname'] . '<br>
-					<p><b>Prénom : </b>' . $_POST['firstname'] . '<br>
-					<p><b>Email : </b>' . $_POST['email'] . '<br>
-					<b>Message : </b>' . htmlspecialchars($_POST['message']) . '</p>';
-                // dd($message);
-                $retour = mail('au.dombre@gmail.com', 'Envoi depuis page Contact', $message, "");
-                if ($retour)
-                    echo '<p>Votre message a bien été envoyé.</p>';
-            }
-
-            ?>
         </div>
     </section>
 

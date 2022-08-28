@@ -23,7 +23,7 @@
 
 				<fieldset class="form__text">
 					<label class="form_message" for="message">Laissez votre message</label> <br>
-					<textarea name="message" id="message" placeholder="Votre message" cols="30" rows="10"></textarea>
+					<textarea name="message" id="message" type="text" placeholder="Votre message" cols="30" rows="10"></textarea>
 					<br> <button type="submit"> Envoyer</button>
 				</fieldset>
 
@@ -36,7 +36,7 @@
 					$entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 					//Fausse adresse pour envoyer le mail via notre serveur, il faut qu'il soit cohérent avec la serveur sur lequel est déployé le site 
 					//(sinon ça part dans les spam)
-					$entete .= 'From: contact@gmail.com' . "\r\n";
+					$entete .= 'From: contact.portfolio@gmail.com' . "\r\n";
 					//Pour pouvoir répondre par mail à l'expéditeur
 					$entete .= 'Reply-to: ' . $_POST['email'];
 
