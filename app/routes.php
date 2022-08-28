@@ -17,7 +17,7 @@ $this->addRoute(
     '/', // URL pattern
     'MainController', // Controller name
     'home', // Method name
-    'main_home' // => route's name (for URL generation)
+    'main_home'// => route's name (for URL generation)
 );
 
 // $this->addRoute(
