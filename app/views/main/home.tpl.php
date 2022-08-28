@@ -1,5 +1,6 @@
 <!-- Menu -->
 <?php
+session_start();
 include __DIR__ . '/../partials/nav.tpl.php';
 ?>
 
@@ -50,34 +51,28 @@ include __DIR__ . '/../partials/nav.tpl.php';
                 <fieldset class="form__contact">
                     <label class="form_lastname" for="lastname"> Nom</label>
                     <input type="text" name="lastname" id="lastname" placeholder="Nom" value="<?= $_POST['lastname'] ?? '' ?>" require>
-                        <?php if (isset($errorsList['lastname'])) : ?>
-                            <p><?php $errorsList['lastname'] ?></p>
-                        <?php endif ?>
                     <label class="form_firstname" for="firstname">Prénom</label>
                     <input type="text" name="firstname" id="firstname" placeholder="Prénom" value="<?= $_POST['firstname'] ?? '' ?>" require>
-                        <?php if (isset($errorsList['firstname'])) : ?>
-                            <p><?php $errorsList['firstname'] ?></p>
-                        <?php endif ?> 
                     <label class="form_email" for="email"> E-mail</label>
                     <input type="email" name="email" id="email" placeholder="@ E-mail" value="<?= $_POST['email'] ?? '' ?>" require>
-                        <?php if (isset($errorsList['mail'])) : ?>
-                            <p><?php $errorsList['mail'] ?></p> 
-                        <?php endif ?>
                 </fieldset>
 
                 <fieldset class="form__text">
                     <label class="form_message" for="messageContact">Laissez votre message</label> 
                     <textarea type="texte" name="messageContact" id="message" placeholder="Votre message" value="<?= $_POST['messageContact'] ?? '' ?>"></textarea>
-                        <?php if (isset($errorsList['messageContact'])) : ?>
-                            <p><?php $errorsList['messageContact'] ?></p>
-                        <?php endif ?>
                     <button type="submit" name="submit"> Envoyer</button>
                 </fieldset>
             </form>
-
         </div>
-        
 
+        <?php if (array_key_exists('errorsList', $_SESSION)) : ?>
+            <div class="alert alert-warning" role="alert">
+                <div>
+                    <?= implode('<br>', $_SESSION['errorsList'])?>
+                </div>
+            </div>
+        <?php unset($_SESSION['errorsList']); endif ?>
+        
     </section>
 
     <section class="contact">

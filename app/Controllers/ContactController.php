@@ -2,11 +2,14 @@
 
 namespace App\Controllers;
 
+use GMP;
 use Oframework\Controllers\CoreController;
+use App\Utils\Flash;
 
 
 class ContactController extends CoreController
 {
+
     /**
      * Method for the contact page
      * 
@@ -38,26 +41,33 @@ class ContactController extends CoreController
         $email = filter_input(INPUT_POST, 'email');
         $messageContact = filter_input(INPUT_POST,'messageContact');
 
+
         // Gestion des erreurs
         $errorsList = [];
 
-        if ($lastname === null || $lastname === '') {
-            // Ajout d'un message d'erreur
-            $errors['lastname'] = 'Le nom doit être renseigné';
-        }
+        $successMessage =[];
 
-        if ($firstname === null || $firstname === '') {
+        if (empty($_POST['lastname'])) {
             // Ajout d'un message d'erreur
-            $errors['firstname'] = 'Le prénom doit être renseigné';
-        }
-
-        if ($email === false) {
-            $errors['mail'] = 'L\'email n\'a pas un format valide';
+            $errorsList['lastname'] = 'Le nom doit être renseigné';
         }
         
-        if ($messageContact === false) {
-            $errors['messageContact'] = 'Un message doit être renseigné';
+
+        if (empty($_POST['firstname'])) {
+            // Ajout d'un message d'erreur
+            $errorsList['firstname'] = 'Le prénom doit être renseigné';
         }
+
+        if (empty($_POST['email'])) {
+            $errorsList['mail'] = 'L\'email doit être renseigné';
+        }
+        
+        if (empty($_POST['messageContact'])) {
+            $errorsList['messageContact'] = 'Un message doit être renseigné';
+        }
+
+        //var_dump( $errorsList);
+
 
         // Vérifier si le formulaire est soumis 
         if (isset($_POST['submit'])) {
@@ -79,16 +89,19 @@ class ContactController extends CoreController
             //dump("retour",$retour);
 
             if($retour){
-                '<p> Votre message a bien été envoyé </p>';
-                //$this->redirectToRoute('main_home');
+                $successMessage['mailSend'] = 'Votre message a bien été envoyé';
+                header('Location: /portfolio/public/');
             }
 
         } 
-        
-            //$this->redirectToRoute('main_home');
 
+        if (!empty($errorsList)){
+            session_start();
+            $_SESSION['errorsList'] = $errorsList;
+            header('Location: /portfolio/public/');
+        }
         
-
+        //return $this->redirectToRoute('main-home');
 
         // For now, this page only needs the view
         //$this->show('main/home');

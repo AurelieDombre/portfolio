@@ -40,14 +40,14 @@ abstract class CoreController {
     /**
      * Méthode permettant de rediriger vers une route mappée avec AltoRouter
      */
-    public function redirectToRoute($routeName) {
+    public function redirectToRoute($routeName, $routeDynamicParts = []) {
         global $router;
-        $routeName = 'main_home';
+
         // On génère l'URL vers laquelle rediriger
-        $url = $router->generate($routeName);
+        $url = $router->generate($routeName, $routeDynamicParts);
 
         // Redirection
         header('Location: '.$url);
-        exit();
+        exit;
     }
 }
