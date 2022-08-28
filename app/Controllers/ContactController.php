@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use Oframework\Controllers\CoreController;
-use App\Utils\Flash;
+
 
 class ContactController extends CoreController
 {
@@ -31,13 +31,12 @@ class ContactController extends CoreController
      */
     public function postContact()
     {
-        // dd('avant if');
-
+        //dd('avant if', $_POST);
         // Vérification des données
-        $lastname = filter_input(INPUT_POST, 'lastname');
-        $firstname = filter_input(INPUT_POST, 'firstname');
-        $email = filter_input(INPUT_POST, 'email');
-        $messageContact = filter_input(INPUT_POST, 'messageContact');
+        $lastname = filter_input(INPUT_POST, $_POST['lastname']);
+        $firstname = filter_input(INPUT_POST, $_POST['firstname']);
+        $email = filter_input(INPUT_POST, $_POST['email']);
+        $messageContact = filter_input(INPUT_POST, $_POST['messageContact']);
 
         // Gestion des erreurs
         $errorsList = [];
@@ -55,19 +54,18 @@ class ContactController extends CoreController
         if ($email === false) {
             $errorsList[] = 'L\'email n\'a pas un format valide';
         }
-
+        
         if ($messageContact === false) {
             $errorsList[] = 'Un messag doit être renseigné';
         }
 
         // Vérifier si le formulaire est soumis 
-        if (isset($_POST['submit']) === false) {
-            /* récupérer les données du formulaire en utilisant 
+        if (isset($_POST['submit'])) {
+            
+        /* récupérer les données du formulaire en utilisant 
         la valeur des attributs name comme clé 
        */
-            dd('dans le if');
-
-
+            dump('avant mail send', $_POST);
             // afficher le résultat
             $mailSend ='<h1>Message envoyé depuis la page Contact du portfolio</h1>
             <p><b>Nom : </b>' . $_POST['lastname']. '<br>
@@ -75,18 +73,23 @@ class ContactController extends CoreController
             <p><b>Email : </b>' . $_POST['email'] . '<br>
             <b>Message : </b>' . $_POST['messageContact'] . '</p>';
             
-            dd($mailSend );
-            dd($_POST['messageContact']);
+            dump('après mail send', $mailSend);
 
             $retour = mail('au.dombre@gmail.com', 'Envoi depuis page Contact', $mailSend,"From:contact@exemplesite.fr\r\nReply-to:" . $_POST['email']);
-            dd($retour);
+            dump("retour",$retour);
 
             if($retour){
                 echo ('Votre message a bien été envoyé');
 
             }
+
+
+        } else if (isset($_POST['lastname'])== null|| "" && isset($_POST['firstname']) == null|| "" && isset($_POST['email']) == null|| "" && isset($_POST['messageContact']) == null|| ""){
+            echo '<p> Merci de compléter le formulaire </p>';
+            exit;
         }
 
+        //header('Location: /');
         // For now, this page only needs the view
         //$this->show('main/home');
         // Instead, if this page needs data, we can put all data

@@ -36,17 +36,17 @@ $this->addRoute(
 //     'main_project' // => route's name (for URL generation)
 // );
 
-// $this->addRoute(
-//     'GET', // HTTP Method
-//     '/validate', // URL pattern
-//     'ContactController', // Controller name
-//     'validate', // Method name
-//     'main_validate' // => route's name (for URL generation)
-// );
+$this->addRoute(
+    'GET', // HTTP Method
+    '/validate', // URL pattern
+    'ContactController', // Controller name
+    'validate', // Method name
+    'main_validate' // => route's name (for URL generation)
+);
 
 $this->addRoute(
     'POST', // HTTP Method
-    '/contactForm', // URL pattern
+    '/', // URL pattern
     'ContactController', // Controller name
     'postContact', // Method name
     'main_home-post' // => route's name (for URL generation)
