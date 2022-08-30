@@ -83,7 +83,7 @@ class ContactController extends CoreController
             <p><b>Email : </b>' . $_POST['email'] . '<br>
             <b>Message : </b>' . $_POST['messageContact'] . '</p>';
             
-            //dump('après mail send', $mailSend);
+            dump('après mail send', $mailSend);
 
             $retour = mail('au.dombre@gmail.com', 'Envoi depuis page Contact', $mailSend,"From:contact@exemplesite.fr\r\nReply-to:" . $_POST['email']);
             //dump("retour",$retour);
@@ -100,8 +100,7 @@ class ContactController extends CoreController
             $_SESSION['errorsList'] = $errorsList;
             header('Location: /portfolio/public/');
         }
-        
-        //return $this->redirectToRoute('main-home');
+
 
         // For now, this page only needs the view
         //$this->show('main/home');
